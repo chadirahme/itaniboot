@@ -1,0 +1,355 @@
+<section id="inner-headline">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <h2 class="pageTitle">Contact Us</h2>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="content">
+
+
+
+  <div class="container">
+
+
+
+    <div class="row">
+
+      <div class="col-md-6">
+
+
+
+        <div class="alert alert-success hidden" id="contactSuccess">
+
+          <strong>Success!</strong> Your message has been sent to us.
+
+        </div>
+
+        <div class="alert alert-danger hidden" id="contactError">
+
+          <strong>Error!</strong> There was an error sending your message.
+
+        </div>
+
+        <div class="alert alert-danger hidden" id="validError">
+
+          <strong>Error!</strong> Please fill all the fields.
+
+        </div>
+
+        <div class="contact-form">
+
+
+
+          <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
+
+
+
+          <form name="contactForm" id="contactForm">
+
+            <h3>Contact Form</h3>
+
+            <div class="control-group">
+
+              <div class="controls">
+
+                <input type="text" class="form-control"
+
+                       placeholder="Full Name" id="name" required="required"
+
+                />
+
+                <p class="help-block"></p>
+
+              </div>
+
+            </div>
+
+            <div class="control-group">
+
+              <div class="controls">
+
+                <input type="email" class="form-control" placeholder="Email"
+
+                       id="email" required  data-validation="email"
+
+                       data-validation-required-message="Please enter your email"/>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="control-group">
+
+              <div class="controls">
+
+                <input type="text" class="form-control" placeholder="Phone"
+
+                       id="phone" required  data-validation="birthdate"
+
+                       data-validation-required-message="Please enter your phone"/>
+
+              </div>
+
+            </div>
+
+
+
+
+
+            <div class="control-group">
+
+              <div class="controls">
+
+				 <textarea rows="6" cols="100" class="form-control"
+
+                   placeholder="Message" id="message" required
+
+                   data-validation-required-message="Please enter your message" minlength="5"
+
+                   data-validation-minlength-message="Min 5 characters"
+
+                   maxlength="999" style="resize:none"></textarea>
+
+              </div>
+
+            </div>
+
+            <div id="success"></div> <!-- For success/fail messages -->
+
+            <button type="button" (click)="sendEmail()" id="btnSend" name="btnSend"
+                    class="btn btn-success wow fadeInUp pull-right">Send</button>
+
+            <br/>
+
+          </form>
+
+
+
+
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+
+        <div style="overflow:hidden;height:500px;width:600px;">
+
+          <div id="gmap_canvas" style="height:500px;width:600px;"></div>
+
+          <style>#gmap_canvas img {
+
+            max-width: none !important;
+
+            background: none !important
+
+          }</style>
+
+          <a class="google-map-code" href="http://itaniformaterials.com/" id="get-map-data">ITANI</a></div>
+
+        <!-- <script type="text/javascript">
+
+
+
+         </script>-->
+
+      </div>
+
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="info-detail">
+
+        <!-- <ul><li><i class="fa fa-calendar"></i><span>Monday - Friday:</span> 9:30 AM to 6:30 PM</li></ul>-->
+
+        <ul><li><i class="fa fa-map-marker"></i><span>Address:</span> Street Mar Elias - Chahine Building</li></ul>
+
+        <ul><li><i class="fa fa-phone"></i><span>Phone:</span> 00961-1-311913 </li></ul>
+
+
+
+        <ul><li><i class="fa fa-fax"></i><span>Fax:</span> 00961-1-311912 </li></ul>
+
+        <ul><li><i class="fa fa-archive"></i><span>PO Box:</span> 13-5889-Chouran Beirut-Lebanon</li></ul>
+
+        <ul><li><i class="fa fa-envelope"></i><span>Email:</span> info@itaniformaterials.com</li></ul>
+
+
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+<script type="text/javascript">
+
+  // <![CDATA[
+
+  $(document).ready(function() {
+
+    function init_map()
+
+    {
+
+      var myOptions = {
+
+        zoom: 14,
+
+        center: new google.maps.LatLng(33.882701, 35.492547),
+
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+
+      };
+
+      map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+
+      marker = new google.maps.Marker({
+
+        map: map,
+
+        position: new google.maps.LatLng(33.882701, 35.492547)
+
+      });
+
+      infowindow = new google.maps.InfoWindow({content: "<b>Itani</b><br/>Beirut Mar Elias <br/> Chahine Building"});
+
+      google.maps.event.addListener(marker, "click", function () {
+
+        infowindow.open(map, marker);
+
+      });
+
+      infowindow.open(map, marker);
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', init_map);
+
+
+
+    /* $("#contactForm").validate({
+
+
+
+     errorLabelContainer: $("#contactForm div.error")
+
+     });*/
+
+
+
+    //alert( $('#contactForm')[0].checkValidity()) ;
+
+    /* $.validate({
+
+     modules : 'date, security'
+
+     });*/
+
+
+    sendMail = function ()
+
+    {
+
+      var contactEmail = {
+
+        name: $('#name').val(),
+
+        email: $('#email').val(),
+
+        phone: $('#phone').val(),
+
+        message:  $('#message').val(),
+
+      };
+
+
+
+      if(contactEmail.name=='' || contactEmail.email=='' || contactEmail.phone ==''|| contactEmail.message=='')
+
+      {
+
+        $("#validError").removeClass('hidden');
+
+        return;
+
+      }
+
+      $('#btnSend').attr('disabled', true);
+
+      $("#validError").addClass('hidden');
+
+      var parm="?name="+contactEmail.name+'&email='+contactEmail.email+'&phone='+contactEmail.phone+'&message='+contactEmail.message;
+
+      // console.log(parm);
+
+      // return;
+
+      $.ajax({
+
+        url: '/sendmail'+parm,
+
+        type: 'POST',
+
+        dataType: "text",
+
+        data : JSON.stringify(contactEmail),
+
+        contentType: 'application/json',
+
+        success: function(data) {
+
+          //alert(data);
+
+          $("#contactSuccess").removeClass('hidden');
+
+        },
+
+        error: function(jqXHR, textStatus, errorThrown) {
+
+          alert(textStatus);
+
+          $("#contactError").removeClass('hidden');
+
+        }
+
+
+
+      });
+
+    }
+
+
+
+
+
+  });
+
+
+
+  // ]]>
+
+</script>
