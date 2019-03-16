@@ -33,3 +33,4 @@ https://www.google.com/search?q=kitchen+and+bathroom&rlz=1C5CHFA_enCA730CA730&so
 angular memory database
 https://www.techiediaries.com/angular-router/
 
+ng build --prod

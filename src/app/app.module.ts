@@ -16,6 +16,8 @@ import { AqgComponent } from './aqg/aqg.component';
 import { ContactComponent } from './contact/contact.component';
 import {HttpClientModule} from "@angular/common/http";
 import { CategoryComponent } from './category/category.component';
+import { ItaComponent } from './ita/ita.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { CategoryComponent } from './category/category.component';
     CotaliComponent,
     AqgComponent,
     ContactComponent,
-    CategoryComponent
+    CategoryComponent,
+    ItaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

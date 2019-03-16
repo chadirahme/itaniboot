@@ -10,6 +10,7 @@ import {CotaliComponent} from "./cotali/cotali.component";
 import {AqgComponent} from "./aqg/aqg.component";
 import {ContactComponent} from "./contact/contact.component";
 import {CategoryComponent} from "./category/category.component";
+import {ItaComponent} from "./ita/ita.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'pedrollo', component: PedrolloComponent },
   { path: 'cotali', component: CotaliComponent },
   { path: 'aqg', component: AqgComponent },
+  { path: 'ita', component: ItaComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'category', component: CategoryComponent },
   { path: '*', component: HomeComponent },
