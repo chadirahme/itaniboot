@@ -19,10 +19,14 @@ import { CategoryComponent } from './category/category.component';
 import { ItaComponent } from './ita/ita.component';
 import { FooterComponent } from './footer/footer.component';
 import {AgmCoreModule} from "@agm/core";
+import {CarouselComponent} from "./carousel/carousel.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgImageSliderModule} from "ng-image-slider";
 
 @NgModule({
   declarations: [
     AppComponent,
+    CarouselComponent,
     HeaderComponent,
     HomeComponent,
     AboutComponent,
@@ -41,6 +45,8 @@ import {AgmCoreModule} from "@agm/core";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    NgImageSliderModule,
     HttpClientModule,    // <-- Right here
     AgmCoreModule.forRoot({
    

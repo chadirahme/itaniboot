@@ -19,6 +19,12 @@ git push -u origin master
 remove after we add to git
 git rm -r -f --cached .
 
+create new branch
+git checkout -b update01
+then push
+git push --set-upstream origin update01
+
+
 http://www.etskhoury.com/Home/index
 
 file:///Users/chadirahme/Documents/Itani/sentra-master/index.html

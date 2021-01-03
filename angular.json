@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "itaniboot"
+  "defaultProject": "itaniboot",
+  "cli": {
+    "analytics": false
+  }
 }
