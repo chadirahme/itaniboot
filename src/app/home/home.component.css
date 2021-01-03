@@ -1,0 +1,15 @@
+/*header style*/
+.header{
+  background-image: url('../../assets/images/slider1.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.aboutheader{
+  background-image: url('../../assets/images/abou1.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+

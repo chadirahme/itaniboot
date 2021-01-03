@@ -1,0 +1,53 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { DocksComponent } from './docks/docks.component';
+import { DrainageComponent } from './drainage/drainage.component';
+import { BrandsComponent } from './brands/brands.component';
+import { GroheComponent } from './grohe/grohe.component';
+import { PedrolloComponent } from './pedrollo/pedrollo.component';
+import { CotaliComponent } from './cotali/cotali.component';
+import { AqgComponent } from './aqg/aqg.component';
+import { ContactComponent } from './contact/contact.component';
+import {HttpClientModule} from "@angular/common/http";
+import { CategoryComponent } from './category/category.component';
+import { ItaComponent } from './ita/ita.component';
+import { FooterComponent } from './footer/footer.component';
+import {AgmCoreModule} from "@agm/core";
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    AboutComponent,
+    DocksComponent,
+    DrainageComponent,
+    BrandsComponent,
+    GroheComponent,
+    PedrolloComponent,
+    CotaliComponent,
+    AqgComponent,
+    ContactComponent,
+    CategoryComponent,
+    ItaComponent,
+    FooterComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,    // <-- Right here
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCcU1cxdKQYFUTR_pNIPd1veVCnq1ICAxo'
+    })
+
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

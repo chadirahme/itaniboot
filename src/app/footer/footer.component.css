@@ -1,0 +1,41 @@
+footer{
+  background: #f92218;
+}
+footer ul.link-list li a{
+  color: #fff;
+}
+footer ul.link-list li a:hover {
+  color:#eee;
+}
+footer .widgetheading {
+  position: relative;
+}
+
+footer .widget .social-network {
+  position:relative;
+}
+
+footer{
+  padding:50px 0 0 0;
+  color: #fff;
+}
+
+footer a {
+  color:#fff;
+}
+
+footer a:hover {
+  color:#eee;
+}
+
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6{
+  color: #FFFFFF;
+}
+
+footer address {
+  line-height:1.6em;
+}
+
+footer h5 a:hover, footer a:hover {
+  text-decoration:none;
+}
